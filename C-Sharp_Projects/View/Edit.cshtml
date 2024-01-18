@@ -1,0 +1,118 @@
+@model TheatreCMS3.Areas.Rent.Models.Rental
+<script type="text/javascript" src="jquery-3.5.1.js"></script>
+<script type="text/javascript" src="~/Areas/Rent/JS/DropDownBar.js"></script>
+<link rel="stylesheet" type="text/css" href="~/Content/Areas/Rent.css" />
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal container-sm">
+        <h4 id="titleStyle" style="text-align: center">Edit Rental</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.RentalId)
+
+        <!--This contains the dropdown for selecting which rental type they want -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.RentalType, "Rental Choice", htmlAttributes: new { @class = "control-label col-md-3 textStyle" })
+            <div class="centered-input">
+                @Html.DropDownListFor(model => model.RentalType, ViewBag.RentalTypes as SelectList, new { @class = "form-control rentalchoice" })
+            </div>
+        </div>
+
+        <!--This contains all the Rental(parentclass) properties that will be displayed-->
+        <div class="form-group RO">
+            @Html.LabelFor(model => model.RentalName, "Rental Name", htmlAttributes: new { @class = "control-label col-md-3 textStyle" })
+            <div class="centered-input">
+                @Html.EditorFor(model => model.RentalName, new { htmlAttributes = new { @class = "form-control form-change", placeholder = "Enter the rental name" } })
+                @Html.ValidationMessageFor(model => model.RentalName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group RO">
+            @Html.LabelFor(model => model.RentalCost, "Rental Cost", htmlAttributes: new { @class = "control-label col-md-3 textStyle " })
+            <div class="centered-input">
+                @Html.EditorFor(model => model.RentalCost, new { htmlAttributes = new { @class = "form-control form-change", placeholder = "Enter the rental cost " } })
+                @Html.ValidationMessageFor(model => model.RentalCost, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group RO">
+            @Html.LabelFor(model => model.FlawsAndDamages, "Flaws And Damages", htmlAttributes: new { @class = "control-label col-md-3 textStyle" })
+            <div class="centered-input">
+                @Html.EditorFor(model => model.FlawsAndDamages, new { htmlAttributes = new { @class = "form-control form-change", placeholder = "Enter any flaws or damage" } })
+                @Html.ValidationMessageFor(model => model.FlawsAndDamages, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <!--This contains all the RentalEquipment properties that will be displayed when selected-->
+        <div class="form-group REO">
+            @Html.LabelFor(model => model.RentalEquipment.ChokingHazard, "Choking Hazard", htmlAttributes: new { @class = "control-label col-md-3 textStyle" })
+            <div class="centered-input">
+                @Html.EditorFor(model => model.RentalEquipment.ChokingHazard, new { htmlAttributes = new { @class = "form-control form-change" } })
+                @Html.ValidationMessageFor(model => model.RentalEquipment.ChokingHazard, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group REO">
+            @Html.LabelFor(model => model.RentalEquipment.SuffocationHazard, "Suffocation Hazard", htmlAttributes: new { @class = "control-label col-md-3 textStyle" })
+            <div class="centered-input">
+                @Html.EditorFor(model => model.RentalEquipment.SuffocationHazard, new { htmlAttributes = new { @class = "form-control form-change" } })
+                @Html.ValidationMessageFor(model => model.RentalEquipment.SuffocationHazard, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group REO">
+            @Html.LabelFor(model => model.RentalEquipment.PurchasingPrice, "Purchasing Price", htmlAttributes: new { @class = "control-label col-md-3 textStyle" })
+            <div class="centered-input">
+                @Html.EditorFor(model => model.RentalEquipment.PurchasingPrice, new { htmlAttributes = new { @class = "form-control form-change", placeholder = "Enter the purchasing price" } })
+                @Html.ValidationMessageFor(model => model.RentalEquipment.PurchasingPrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!--This contains all the RentalRoom properties that will be displayed when selected-->
+        <div class="form-group RRO">
+            @Html.LabelFor(model => model.RentalRoom.RoomNumber, "Room Number", htmlAttributes: new { @class = "control-label col-md-3 textStyle" })
+            <div class="centered-input">
+                @Html.EditorFor(model => model.RentalRoom.RoomNumber, new { htmlAttributes = new { @class = "form-control form-change", placeholder = "Enter the room number" } })
+                @Html.ValidationMessageFor(model => model.RentalRoom.RoomNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group RRO">
+            @Html.LabelFor(model => model.RentalRoom.MaxOccupancy, "Max Occupancy", htmlAttributes: new { @class = "control-label col-md-3 textStyle" })
+            <div class="centered-input">
+                @Html.EditorFor(model => model.RentalRoom.MaxOccupancy, new { htmlAttributes = new { @class = "form-control form-change", placeholder = "Enter the max occupancy" } })
+                @Html.ValidationMessageFor(model => model.RentalRoom.MaxOccupancy, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group RRO">
+            @Html.LabelFor(model => model.RentalRoom.SquareFootage, "Square Footage", htmlAttributes: new { @class = "control-label col-md-3 textStyle" })
+            <div class="centered-input">
+                @Html.EditorFor(model => model.RentalRoom.SquareFootage, new { htmlAttributes = new { @class = "form-control form-change", placeholder = "Enter the square footage" } })
+                @Html.ValidationMessageFor(model => model.RentalRoom.SquareFootage, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!--This contains the submission and return buttons used to compelted this file-->
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm">
+                    <input type="submit" value="Save Now" class="btn" id="submitButtonStyle" />
+                </div>
+                <div class="col-sm">
+                    <div class="btn btn-default returnButtonStyle">
+                        @Html.ActionLink("Return to List", "Index", "Rentals", "Rent", new { Style = "text-decoration: none; color: black; font-size:16px" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
