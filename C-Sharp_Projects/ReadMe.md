@@ -1,17 +1,17 @@
-# <p align="center" ><ins>Live-Project with C#</ins></p>
+# 							<p align = "center"><ins>LIVE-PROJECT</ins></p>
 
-## Introduction
-	I had the opportunity to work on a Live-Project for a two-week sprint. I was part of a team of developers working on an MVC/MVVM Web application using C#.during this project I was tasks with primarily providing the ability for a user to rent items from the owner and record data on those items to a database. We all had a chance to work on both the front-end and back-end content. And I was able to build some experience in project management and team building skills as we reviewed our work and consistently helped eachother with any problems we faced.
+### Introduction
+I had the opportunity to work on a Live-Project for a two-week sprint. I was part of a team of developers working on an MVC/MVVM Web application using C#.during this project I was tasks with primarily providing the ability for a user to rent items from the owner and record data on those items to a database. We all had a chance to work on both the front-end and back-end content. And I was able to build some experience in project management and team building skills as we reviewed our work and consistently helped eachother with any problems we faced.
 
 
-## MODEL and DATABASE 
-	I spent the beginning part of this creating a model that woudl contain 3 classes. In the Rental.cs you can see the three classes with the two lower classes defining the items to be included in the main class. I had several different categories that we needed to include in each unit created. 
+### Model and Database
+I spent the beginning part of this creating a model that woudl contain 3 classes. In the Rental.cs you can see the three classes with the two lower classes defining the items to be included in the main class. I had several different categories that we needed to include in each unit created. 
 
-## CONTROLLER AND SCAFFFOLDING
-	I also created a controller and use scaffolding (ASP.NET MVC feature) to generate the 4 pages I would have. In these pages I would have full CRUD functionality.  	
+## Controller and Scaffolding
+I also created a controller and use scaffolding (ASP.NET MVC feature) to generate the 4 pages I would have. In these pages I would have full CRUD functionality.  	
 
-## LAYOUT AND STYLING
-	The scaffolding created a very crude outline, So I spent time utilizing BootStrap in creating a better layout and styling each page.
+## Layout and Styling
+The scaffolding created a very crude outline, So I spent time utilizing BootStrap in creating a better layout and styling each page.
 	
 ## additional skills:
 * I built up habits of saving my work constantly as I progressed as well as Debugging.
